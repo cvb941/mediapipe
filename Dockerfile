@@ -30,6 +30,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         git \
         wget \
         unzip \
+        zip \
+        nano \
         python3-dev \
         python3-opencv \
         python3-pip \
@@ -67,6 +69,9 @@ azel-${BAZEL_VERSION}-installer-linux-x86_64.sh" && \
     chmod +x /bazel/installer.sh && \
     /bazel/installer.sh  && \
     rm -f /bazel/installer.sh
+
+#COPY setup_android_sdk_and_ndk.sh /mediapipe/
+#RUN bash ./setup_android_sdk_and_ndk.sh ~/Android/Sdk ~/Android/Sdk/ndk-bundle/android-ndk-r21/ r21 --accept-licenses
 
 COPY . /mediapipe/
 
